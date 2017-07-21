@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GeocacheFormComponent } from './geocache-form.component';
+import { LocationFormComponent } from './location-form.component';
 
-describe('GeocacheFormComponent', () => {
-  let component: GeocacheFormComponent;
-  let fixture: ComponentFixture<GeocacheFormComponent>;
+describe('LocationFormComponent', () => {
+  let component: LocationFormComponent;
+  let fixture: ComponentFixture<LocationFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GeocacheFormComponent ]
+      declarations: [ LocationFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GeocacheFormComponent);
+    fixture = TestBed.createComponent(LocationFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
