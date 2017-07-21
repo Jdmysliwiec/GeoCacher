@@ -10,6 +10,9 @@ export class GeocacheFormComponent implements OnInit {
 
   constructor() { }
 
+  getGeocacheLocation(latitude: number, longitude: number) {
+
+  }
   ngOnInit() {
   }
 
