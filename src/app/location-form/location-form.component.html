@@ -1,5 +1,6 @@
 <h1>Let's GeoCache</h1>
 
+<h2>Get a physical address by entering latitudinal and longitudinal coordinates</h2>
 <form>
   <div class="form-group">
     <label for="latitude">Enter Latitudinal Coordinates</label>
@@ -9,12 +10,34 @@
     <label for="Longitude">Enter Longitudinal Coordinates</label>
     <input #locationLongitude>
   </div>
-  <button (click)="getLocation(locationLatitude.value, locationLongitude.value)">Get Location</button>
+  <button (click)="getLocationByCoord(locationLatitude.value, locationLongitude.value)">Get Location</button>
 </form>
 
-<h1>List of Locations found using those coordinates</h1>
-<h2></h2>
-<div *ngIf="locations">
-  <p>{{locations.results[0].formatted_address}}</p>
+<h2>Or get coordinates based on a physical address</h2>
+<form>
+  <div class="form-group">
+    <label for="address">Enter an the street address</label>
+    <input #locationAddress>
+  </div>
+  <div class="form-group">
+      <label for="city">Enter the city</label>
+      <input #locationCity>
+  </div>
+  <div class="form-group">
+    <label for="state">Enter the state</label>
+    <input #locationState>
+  </div>
+  <button (click)="getLocationByAddress(locationAddress.value, locationCity.value, locationState.value)">Get Latitude and Longitude</button>
+</form>
 
+
+<div *ngIf="locationsByCoord">
+  <h1>List of Locations found using those coordinates</h1>
+  <p>{{locationsByCoord.results[0].formatted_address}}</p>
+</div>
+
+<div *ngIf="locationsByAddress">
+  <h1>List of Coordinates that match this address</h1>
+  <p>Latitudinal coordinate: {{locationsByAddress.results[0].geometry.location.lat}}</p>
+  <p>Longitudinal coordinate: {{locationsByAddress.results[0].geometry.location.lng}}</p>
 </div>

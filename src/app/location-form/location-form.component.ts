@@ -10,17 +10,23 @@ import { Router } from '@angular/router';
   providers: [ GeocodeApiLocationService ]
 })
 export class LocationFormComponent implements OnInit {
-  locations: any[]=null;
+  locationsByCoord: any[]=null;
+  locationsByAddress: any[]=null;
 
   constructor(private router: Router, private geocodeLocations: GeocodeApiLocationService) { }
 
   ngOnInit() {
   }
 
-  getLocation(latitude: string, longitude: string) {
+  getLocationByCoord(latitude: string, longitude: string) {
     this.geocodeLocations.getByLatAndLong(latitude, longitude).subscribe(response => {
-      this.locations = response.json();
-      console.log(this.locations);
+      this.locationsByCoord = response.json();
+    });
+  }
+
+  getLocationByAddress(address: string, city: string, state: string) {
+    this.geocodeLocations.getByAddress(address, city, state).subscribe(response => {
+      this.locationsByAddress = response.json();
     });
   }
 }
