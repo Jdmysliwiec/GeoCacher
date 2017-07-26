@@ -16,7 +16,7 @@ A Website that allows the user to input latitudinal and longitudinal coordinates
 2. Sign up for a free geocoding api key from google at https://developers.google.com/maps/documentation/geocoding/start
 3. Add this key into a new file named "api-keys.ts" placed in the /src/app folder
 4. Your api-keys.ts should read as follows:
-export const geoKey = "AIzaSyDcu5uf60R57o4a3K1gLY5wtV-9liwb75A"
+export const geoKey = "Your Key Here"
 5. Navigate to the project home directory and enter the following into your terminal
   * _bower install_
   * _npm install_
